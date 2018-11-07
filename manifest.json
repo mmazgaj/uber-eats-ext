@@ -1,0 +1,37 @@
+{
+  "name": "UBER-EATS.2.0",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "debugger",
+    "notifications",
+    "storage"
+  ],
+  "background":
+  {
+    "scripts": ["js/jquery/jquery.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.ubereats.com/*"
+      ],
+      "js": [
+        "js/jquery/jquery.js",
+        "src/inject/start.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "src/inject/inject.js",
+    "src/inject/checkbox.css",
+    "js/jquery/jquery.js"
+  ]
+}
